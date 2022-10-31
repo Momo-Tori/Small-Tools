@@ -12,4 +12,4 @@
 
 本脚本用于从萌娘百科或bangumi爬取对应项目或角色的图像对应的URL
 
-注意使用前关闭网络代理
+注意使用前关闭网络代理，或详见https://www.cnblogs.com/davyyy/p/14388623.html
