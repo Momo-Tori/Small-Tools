@@ -1,15 +1,11 @@
 #!/usr/bin/env python3
 import os
-import sys
 import subprocess
-
 
 exDir = "ex"
 inputDir = "input"
 tempDir = "temp"
 Timeout = 0.5
-
-os.chdir(os.path.dirname(sys.argv[0]))
 
 inFileMap = {}
 for iF in os.listdir(inputDir):
