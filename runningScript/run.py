@@ -30,6 +30,8 @@ ex = os.listdir(exDir)
 
 for student in ex:
     sourceDir = os.path.join(exDir, student)
+    if not os.path.isdir(sourceDir):
+        continue
     sourceFile = os.listdir(sourceDir)
     for sF in sourceFile:
         if not (sF[sF.rfind("."):] in ('.cpp', '.c')):
