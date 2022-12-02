@@ -17,7 +17,7 @@ chsh -s /usr/bin/zsh
 
 # 配置 commitizen
 
-npm install -g commitizen
+sudo npm install -g commitizen
 echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
 
 # 迁移 .zshrc
