@@ -10,8 +10,10 @@ sudo sed -Ei 's/http:/https:/g' "$SOURCES"
 export DEBIAN_FRONTEND=noninteractive
 sudo apt update
 sudo apt -y full-upgrade
-sudo apt -y install vim build-essential python3-pip git openssh-client wget curl tldr tree cmake gdb tmux nodejs npm
+sudo apt -y install vim build-essential python3-pip git openssh-client wget curl tldr tree cmake gdb tmux nodejs npm zsh zsh-autosuggestions zsh-syntax-highlighting zsh-theme-powerlevel9k
 unset DEBIAN_FRONTEND
+
+chsh -s /usr/bin/zsh
 
 # 配置 commitizen
 
