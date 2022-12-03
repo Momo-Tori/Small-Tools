@@ -17,6 +17,12 @@ chsh -s /usr/bin/zsh
 
 # 配置 commitizen
 
+# 首先升级node
+
+sudo npm install -g n
+sudo n latest
+sudo n prune
+
 sudo npm install -g commitizen
 echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
 
