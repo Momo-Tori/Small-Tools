@@ -1,9 +1,10 @@
-# ls aliases
+# ls & grep aliases
 alias ls='ls --color=auto'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias grep="grep --color=auto"
+# end ls & grep aliases
 
 # set ls color
 
@@ -16,6 +17,8 @@ LS_COLORS=$LS_COLORS:'ow=33;4'
 
 export LS_COLORS
 
+# end set ls color
+
 
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
@@ -24,11 +27,13 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 npm set prefix ~/.npm
 PATH="$HOME/.npm/bin:$PATH"
 PATH="./node_modules/.bin:$PATH"
+# end npm setting
 
 # git aliases
 alias gs="git status"
 alias ga="git add"
 alias gc="git cz"
+# end git alisaes
 
 # zsh configuration
 
@@ -37,6 +42,20 @@ HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 bindkey -e
+
+# ctrl+D exit the shell
+exit_zsh() { exit }
+zle -N exit_zsh
+bindkey '^D' exit_zsh
+# ctrl+U
+bindkey \^U backward-kill-line
+# ctrl+backspace
+bindkey '^H' backward-kill-word
+# ctrl+left&right
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
+
+
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/momotori/.zshrc'
@@ -45,9 +64,12 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+# loading module
 source /usr/share/powerlevel9k/powerlevel9k.zsh-theme
 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# theme setting
 
 POWERLEVEL9K_MODE="nerdfont-complete"
 
@@ -83,6 +105,8 @@ POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND='grey30'
 
 ZSH_DISABLE_COMPFIX=true
 
+# end theme setting
+
 # make cd use the ls colours
 zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
 autoload -Uz compinit
@@ -91,3 +115,5 @@ compinit
 # 忽略大小写
 autoload -Uz compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
+# end zsh configuration
